@@ -4,4 +4,4 @@ echo "printing array values"
 
 MYLOVE=$("M","E","G","H","A","N","A")
 
-echo "first letter is ${MYLOVE[0]}"
+echo "first letter is: " ${MYLOVE[0]}
