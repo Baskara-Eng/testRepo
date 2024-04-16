@@ -12,19 +12,17 @@ else
 	echo "you are root user"
 fi
 
-
-
 VALIDATE(){
-
 	if[ $1 -ne 0 ]
-
-	then
-		echo "installation is $2 failed"
+	then 
+		echo "$2 installtion is failed"
 		exit 1
-	else 
-		echo "$2 installation is success"
+	else
+		echo "$2 installtion is success"
 	fi
 }
+
+
 
 yum install mysql -y
 
