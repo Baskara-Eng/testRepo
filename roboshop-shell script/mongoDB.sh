@@ -28,3 +28,22 @@ cp mango.repo /etc/yum.repos.d/ &>>$LOGFILE
 
 VALIDATE $? "copied mango repo"
 
+dnf install mongodb-org -y &>>$LOGFILE
+
+VALIDATE $? "installed mongodb"
+
+systemctl enable mongod &>>$LOGFILE
+
+VALIDATE $? "enabling mongodb"
+
+systemctl start mongod
+
+VALIDATE $? "staring mongodb"
+
+sed -i 's /127.0.0.0/0.0.0.0/g' /etc/mongod.conf &>>$LOGFILE
+
+systemctl restart mongod &>>$LOGFILE
+
+VALIDATE $? "restarting mongoDB"
+
+
