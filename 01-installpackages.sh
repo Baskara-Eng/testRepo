@@ -3,7 +3,9 @@
 ID=$(id -u)
 
 TIMESTAMP=$(date +%F-H-%M-%S)
-LOG="/tmp/$0-$TIMESTAMP.log"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "scipt started executing at $TIMESTAMP" &>> $LOGFILE
 
 if [ $ID -ne 0 ]
 then
@@ -22,12 +24,16 @@ VALIDATE(){
 	fi
 }
 
-yum install mysql -y 
+#echo "all arguements passed : $@"
 
-VALIDATE $? "mysql"
-
-yum install git -y
-
-VALIDATE $? "git"
-
-echo "all arguements passed : $@"
+for package in $@
+do
+	yum list installed $package &>> $LOGFILE
+	if [ $? -ne 0 ]
+	then 
+		yum install $package -y &>> $LOGFILE
+		VALIDATE $? "$package"
+	else
+		echo "package is installed already "
+	fi
+done
