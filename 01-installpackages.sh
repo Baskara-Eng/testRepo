@@ -34,6 +34,6 @@ do
 		yum install $package -y &>> $LOGFILE
 		VALIDATE $? "$package"
 	else
-		echo "package is installed already "
+		echo "$package is installed already "
 	fi
 done
