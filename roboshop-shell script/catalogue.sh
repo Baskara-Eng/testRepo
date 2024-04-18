@@ -56,7 +56,7 @@ npm install
 
 VALIDATE $? "installing nodejs dependencies" &>>LOGFILE
 
-cp /home/centos/testRepo/roboshop-shell script/catalogue.service /etc/systemd/system/catalogue.service
+cp D:\testRepo\roboshop-shell script\catalogue.service /etc/systemd/system/catalogue.service
 
 systemctl daemon-reload
 
@@ -70,7 +70,7 @@ systemctl start catalogue
 
 VALIDATE $? "Starting catalogue application"  &>>LOGFILE
 
-cp /home/centos/testRepo/roboshop-shell script/mango.repo  /etc/yum.repos.d/mongo.repo
+cp D:\testRepo\roboshop-shell script\mango.repo  /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y
 
