@@ -56,7 +56,7 @@ npm install
 
 VALIDATE $? "installing nodejs dependencies" &>>LOGFILE
 
-cp /home/centos/roboshop-shell script/catalogue.service /etc/systemd/system/catalogue.service
+cp /home/centos/testRepo/roboshop-shell script/catalogue.service /etc/systemd/system/catalogue.service
 
 systemctl daemon-reload
 
