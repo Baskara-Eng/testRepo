@@ -70,7 +70,7 @@ systemctl start catalogue
 
 VALIDATE $? "Starting catalogue application"  &>>LOGFILE
 
-cp /home/centos/tesetRepo/mango.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shell script/mango.repo /etc/yum.repos.d/mongo.repo
 
 dnf install mongodb-org-shell -y
 
