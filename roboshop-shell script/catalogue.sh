@@ -54,7 +54,7 @@ unzip /tmp/catalogue.zip
 
 npm install 
 
-VALIDATE $? "installing nodejs dependencies  &>>LOGFILE
+VALIDATE $? "installing nodejs dependencies" &>>LOGFILE
 
 cp /home/centos/tesetRepo/roboshop-shell script/catalogue.service /etc/systemd/system/catalogue.service
 
