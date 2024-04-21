@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-SOURCE_DIR=/tmp/shellscript.logs
+SOURCE_DIR="/tmp/shellscript.logs"
 
 #check directory is exist or not 
-if [ !d SOURCE_DIR=]
+if [ !d SOURCE_DIR ]
 then
 	echo "Source directory is not exist"
 fi 
